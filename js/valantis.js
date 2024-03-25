@@ -232,13 +232,13 @@ document.querySelector('.filter-by-product').addEventListener('input', (e) => {
 });
 
 document.querySelector('.filter-by-brand').addEventListener('change', (e) => {
-	resetFilters([ '.filter-by-price', '.filter-by-price' ]);
+	resetFilters([ '.filter-by-price', '.filter-by-product' ]);
 	filters.brand = e.target.value || '';
 	populateProducts();
 });
 
 document.querySelector('.filter-by-price').addEventListener('input', (e) => {
-	resetFilters([ '.filter-by-brand', '.filter-by-price' ]);
+	resetFilters([ '.filter-by-brand', '.filter-by-product' ]);
 	filters.price = parseInt(e.target.value, 10) || 0;
 	clearTimeout(filterTimeout);
 	filterTimeout = setTimeout(() => {
